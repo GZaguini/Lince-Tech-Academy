@@ -119,25 +119,18 @@ void imprimirRelatorioAnual(
 
   print('\nEstado: $estado');
 
-  print(
-    'Média: ${mediaTemperatura(leituras).toStringAsFixed(2)} °C',
-  );
+  print('Média: ${mediaTemperatura(leituras).toStringAsFixed(2)} °C',);
 
-  print(
-    'Máxima: ${temperaturaMaxima(leituras).toStringAsFixed(2)} °C',
-  );
+  print('Máxima: ${temperaturaMaxima(leituras).toStringAsFixed(2)} °C',);
 
-  print(
-    'Mínima: ${temperaturaMinima(leituras).toStringAsFixed(2)} °C',
-  );
-  print(red('Celsius: ${media.toStringAsFixed(2)} °C',)
-);
+  print('Mínima: ${temperaturaMinima(leituras).toStringAsFixed(2)} °C',);
 
-print(yellow ('Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',));
+  print(red('Celsius: ${media.toStringAsFixed(2)} °C',));
 
-print(blue(
-  'Kelvin: ${conversor.calcularKelvin(media).toStringAsFixed(2)} K',
-));
+  print(yellow ('Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',));
+
+  print(blue('Kelvin: ${conversor.calcularKelvin(media).toStringAsFixed(2)} K',));
+
 }
 
 // Relatorio Mensal Temperatura
@@ -146,37 +139,29 @@ void imprimirRelatorioMensal(
   String estado,
 ) {
   final conversor = ConversorTemperatura();
-  
 
   print('\n===== $estado =====');
 
   for (var mes = 1; mes <= 12; mes++) {
 
-    final leiturasMes =
-        filtrarPorMes(leituras, mes);
-    final mediaMes = mediaTemperatura(leiturasMes);
+    final leiturasMes = filtrarPorMes(leituras, mes);
     if (leiturasMes.isEmpty) continue;
-
+    final mediaMes = mediaTemperatura(leiturasMes);
+    
     print('\n${meses[mes]}');
 
-    print(
-      'Média: ${mediaTemperatura(leiturasMes).toStringAsFixed(2)} °C',
-    );
+    print('Média: ${mediaTemperatura(leiturasMes).toStringAsFixed(2)} °C',);
 
     print('Máxima: ${temperaturaMaxima(leiturasMes).toStringAsFixed(2)} °C',);
 
     print('Mínima: ${temperaturaMinima(leiturasMes).toStringAsFixed(2)} °C',);
 
-    print(red('Celsius: ${mediaMes.toStringAsFixed(2)} °C',
-));
+    print(red('Celsius: ${mediaMes.toStringAsFixed(2)} °C',));
 
-print(yellow(
-  'Fahrenheit: ${conversor.calcularFahrenheit(mediaMes).toStringAsFixed(2)} °F',
-));
+    print(yellow('Fahrenheit: ${conversor.calcularFahrenheit(mediaMes).toStringAsFixed(2)} °F',));
 
-print(blue(
-  'Kelvin: ${conversor.calcularKelvin(mediaMes).toStringAsFixed(2)} K',
-));
+    print(blue('Kelvin: ${conversor.calcularKelvin(mediaMes).toStringAsFixed(2)} K',));   
+
 }
   }
 
@@ -188,17 +173,11 @@ void imprimirRelatorioUmidadeAnual(
 
   print('\nUmidade - $estado');
 
-  print(green(
-    'Média: ${mediaUmidade(leituras).toStringAsFixed(4)}',
-  ));
+  print(green('Média: ${mediaUmidade(leituras).toStringAsFixed(4)}',));
 
-  print(red(
-    'Máxima: ${umidadeMaxima(leituras).toStringAsFixed(4)}',
-  ));
+  print(red('Máxima: ${umidadeMaxima(leituras).toStringAsFixed(4)}',));
 
-  print(blue(
-    'Mínima: ${umidadeMinima(leituras).toStringAsFixed(4)}',
-  ));
+  print(blue('Mínima: ${umidadeMinima(leituras).toStringAsFixed(4)}',));
 
 }
 
@@ -217,17 +196,12 @@ void imprimirRelatorioUmidadeMensal(
 
     print('\n${meses[mes]}');
 
-    print(green(
-      'Média: ${mediaUmidade(leiturasMes).toStringAsFixed(4)}',
-    ));
+    print(green('Média: ${mediaUmidade(leiturasMes).toStringAsFixed(4)}',));
 
-    print(red(
-      'Máxima: ${umidadeMaxima(leiturasMes).toStringAsFixed(4)}',
-    ));
+    print(red('Máxima: ${umidadeMaxima(leiturasMes).toStringAsFixed(4)}',));
 
-    print(blue(
-      'Mínima: ${umidadeMinima(leiturasMes).toStringAsFixed(4)}',
-    ));
+    print(blue('Mínima: ${umidadeMinima(leiturasMes).toStringAsFixed(4)}',));
+
   }
 }
 
@@ -275,13 +249,9 @@ void imprimirDirecaoAnual(
 
   print('\nDireção do vento - $estado');
 
-  print(yellow(
-    'Graus: ${direcao.toStringAsFixed(2)}°',
-  ));
+  print(yellow('Graus: ${direcao.toStringAsFixed(2)}°',));
 
-  print(yellow(
-    'Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',
-  ));
+  print(yellow('Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',));
 }
 
 // Relatorio Mensal Direção
@@ -305,13 +275,10 @@ void imprimirDirecaoMensal(
 
     print('\n${meses[mes]}');
 
-    print(yellow(
-      'Graus: ${direcao.toStringAsFixed(2)}°',
-    ));
+    print(yellow('Graus: ${direcao.toStringAsFixed(2)}°',));
 
-    print(yellow(
-      'Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',
-    ));
+    print(yellow('Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',));
+
   }
 }
 
@@ -345,10 +312,8 @@ void imprimirTemperaturaPorHorario(
 
     if (leiturasHora.isEmpty) continue;
 
-    print(
-      'Hora $hora: '
-      '${mediaTemperatura(leiturasHora).toStringAsFixed(2)} °C',
-    );
+    print('Hora $hora: ''${mediaTemperatura(leiturasHora).toStringAsFixed(2)} °C',);
+
   }
 
 }
@@ -410,25 +375,16 @@ void imprimirVelocidadeAnual(
 
   print('\nVelocidade do vento - $estado');
 
-  print(
-    'Média: ${media.toStringAsFixed(2)} m/s',
-  );
+  print('Média: ${media.toStringAsFixed(2)} m/s', );
 
-  print(
-    'Máxima: ${velocidadeMaxima(leituras).toStringAsFixed(2)} m/s',
-  );
+  print('Máxima: ${velocidadeMaxima(leituras).toStringAsFixed(2)} m/s',);
 
-  print(
-    'Mínima: ${velocidadeMinima(leituras).toStringAsFixed(2)} m/s',
-  );
+  print('Mínima: ${velocidadeMinima(leituras).toStringAsFixed(2)} m/s',);
 
-  print(
-    'Km/h: ${conversor.paraKmPorHora(media).toStringAsFixed(2)}',
-  );
+  print('Km/h: ${conversor.paraKmPorHora(media).toStringAsFixed(2)}',);
 
-  print(
-    'Mph: ${conversor.paraMph(media).toStringAsFixed(2)}',
-  );
+  print('Mph: ${conversor.paraMph(media).toStringAsFixed(2)}',);
+
 }
 
 void imprimirVelocidadeMensal(
@@ -452,31 +408,20 @@ void imprimirVelocidadeMensal(
 
     print('\n${meses[mes]}');
 
-    print(
-      'Média: ${mediaMes.toStringAsFixed(2)} m/s',
-    );
+    print('Média: ${mediaMes.toStringAsFixed(2)} m/s',);
 
-    print(
-      'Máxima: ${velocidadeMaxima(leiturasMes).toStringAsFixed(2)} m/s',
-    );
+    print('Máxima: ${velocidadeMaxima(leiturasMes).toStringAsFixed(2)} m/s',);
 
-    print(
-      'Mínima: ${velocidadeMinima(leiturasMes).toStringAsFixed(2)} m/s',
-    );
+    print('Mínima: ${velocidadeMinima(leiturasMes).toStringAsFixed(2)} m/s',);
 
-    print(
-      'Km/h: ${conversor.paraKmPorHora(mediaMes).toStringAsFixed(2)}',
-    );
+    print('Km/h: ${conversor.paraKmPorHora(mediaMes).toStringAsFixed(2)}',);
 
-    print(
-      'Mph: ${conversor.paraMph(mediaMes).toStringAsFixed(2)}',
-    );
+    print('Mph: ${conversor.paraMph(mediaMes).toStringAsFixed(2)}',);
+
   }
 }
 
 }
-
-
    final meses = [
     '',
     'Janeiro',
@@ -492,5 +437,3 @@ void imprimirVelocidadeMensal(
     'Novembro',
     'Dezembro',
   ];
-
-
