@@ -10,12 +10,17 @@ class Menu {
 
     final leitor = LeitorArquivo();
     final relatorio = Relatorios();
-    final leituras =
-        await leitor.lerTodosArquivos(
+
+    try{
+    
+    final leituras = await leitor.lerTodosArquivos(
       'C:/Users/guilh/OneDrive/Desktop/Clima/sensores',
     );
-    
-    
+    if (leituras.isEmpty) {
+    print('Nenhum arquivo encontrado.');
+    return;
+    }
+   
     final leiturasSC =
         relatorio.filtrarPorEstado(
       leituras,
@@ -142,7 +147,11 @@ class Menu {
      } catch (e) {
     print('Digite um número válido entre 1 a 4.');
       }
-
   }
+   }catch(e) {
+  print('Falha ao ler os arquivos.');
+  return;
+    }
 }
+
   }
