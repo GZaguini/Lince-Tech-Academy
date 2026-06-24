@@ -130,17 +130,14 @@ void imprimirRelatorioAnual(
   print(
     'Mínima: ${temperaturaMinima(leituras).toStringAsFixed(2)} °C',
   );
-  print(
-  'Celsius: ${media.toStringAsFixed(2)} °C',
+  print(red('Celsius: ${media.toStringAsFixed(2)} °C',)
 );
 
-print(
-  'Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',
-);
+print(yellow ('Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',));
 
-print(
+print(blue(
   'Kelvin: ${conversor.calcularKelvin(media).toStringAsFixed(2)} K',
-);
+));
 }
 
 // Relatorio Mensal Temperatura
@@ -170,17 +167,16 @@ void imprimirRelatorioMensal(
 
     print('Mínima: ${temperaturaMinima(leiturasMes).toStringAsFixed(2)} °C',);
 
-    print(
-  'Celsius: ${mediaMes.toStringAsFixed(2)} °C',
-);
+    print(red('Celsius: ${mediaMes.toStringAsFixed(2)} °C',
+));
 
-print(
+print(yellow(
   'Fahrenheit: ${conversor.calcularFahrenheit(mediaMes).toStringAsFixed(2)} °F',
-);
+));
 
-print(
+print(blue(
   'Kelvin: ${conversor.calcularKelvin(mediaMes).toStringAsFixed(2)} K',
-);
+));
 }
   }
 
@@ -192,17 +188,17 @@ void imprimirRelatorioUmidadeAnual(
 
   print('\nUmidade - $estado');
 
-  print(
+  print(green(
     'Média: ${mediaUmidade(leituras).toStringAsFixed(4)}',
-  );
+  ));
 
-  print(
+  print(red(
     'Máxima: ${umidadeMaxima(leituras).toStringAsFixed(4)}',
-  );
+  ));
 
-  print(
+  print(blue(
     'Mínima: ${umidadeMinima(leituras).toStringAsFixed(4)}',
-  );
+  ));
 
 }
 
@@ -221,17 +217,17 @@ void imprimirRelatorioUmidadeMensal(
 
     print('\n${meses[mes]}');
 
-    print(
+    print(green(
       'Média: ${mediaUmidade(leiturasMes).toStringAsFixed(4)}',
-    );
+    ));
 
-    print(
+    print(red(
       'Máxima: ${umidadeMaxima(leiturasMes).toStringAsFixed(4)}',
-    );
+    ));
 
-    print(
+    print(blue(
       'Mínima: ${umidadeMinima(leiturasMes).toStringAsFixed(4)}',
-    );
+    ));
   }
 }
 
@@ -279,13 +275,13 @@ void imprimirDirecaoAnual(
 
   print('\nDireção do vento - $estado');
 
-  print(
+  print(yellow(
     'Graus: ${direcao.toStringAsFixed(2)}°',
-  );
+  ));
 
-  print(
+  print(yellow(
     'Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',
-  );
+  ));
 }
 
 // Relatorio Mensal Direção
@@ -309,13 +305,13 @@ void imprimirDirecaoMensal(
 
     print('\n${meses[mes]}');
 
-    print(
+    print(yellow(
       'Graus: ${direcao.toStringAsFixed(2)}°',
-    );
+    ));
 
-    print(
+    print(yellow(
       'Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',
-    );
+    ));
   }
 }
 
