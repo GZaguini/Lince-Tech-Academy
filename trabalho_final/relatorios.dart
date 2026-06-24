@@ -1,0 +1,499 @@
+import 'leituraClimatica.dart';
+import 'converso.dart';
+
+
+
+class Relatorios {
+double mediaTemperatura(List<LeituraClimatica> leituras) {
+
+  double soma = 0;
+
+  for (final leitura in leituras) {
+    soma += leitura.temperatura;
+  }
+
+  return soma / leituras.length;
+}
+
+double temperaturaMaxima(List<LeituraClimatica> leituras) {
+  double temperatura = leituras.first.temperatura;
+
+  for (final leitura in leituras) {
+    if (leitura.temperatura > temperatura) {
+      temperatura = leitura.temperatura;
+    }
+  }
+
+  return temperatura;
+}
+
+double temperaturaMinima(List<LeituraClimatica> leituras) {
+  double temperatura = leituras.first.temperatura;
+
+  for (final leitura in leituras) {
+    if (leitura.temperatura < temperatura) {
+      temperatura = leitura.temperatura;
+    }
+  }
+
+  return temperatura;
+}
+ double mediaUmidade(List<LeituraClimatica> leituras){
+
+  if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
+
+  double soma = 0;
+
+  for(final leitura in leituras ){
+    soma += leitura.umidade;
+  }
+
+  return soma / leituras.length;
+}
+
+ double umidadeMaxima(List<LeituraClimatica> leituras) {
+  double umidade = leituras.first.umidade;
+
+  for (final leitura in leituras) {
+    if (leitura.umidade > umidade) {
+      umidade = leitura.umidade;
+    }
+  }
+
+  return umidade;
+}
+
+
+double umidadeMinima(List<LeituraClimatica> leituras) {
+  double umidade = leituras.first.umidade;
+
+  for (final leitura in leituras) {
+    if (leitura.umidade < umidade) {
+      umidade = leitura.umidade;
+    }
+  }
+
+  return umidade;
+}
+
+List<LeituraClimatica> filtrarPorEstado(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+
+  final resultado = <LeituraClimatica>[];
+
+  for (final leitura in leituras) {
+    if (leitura.estado == estado) {
+      resultado.add(leitura);
+    }
+  }
+
+  return resultado;
+}
+
+List<LeituraClimatica> filtrarPorMes(
+  List<LeituraClimatica> leituras,
+  int mes,
+) {
+
+  final resultado = <LeituraClimatica>[];
+
+  for (final leitura in leituras) {
+    if (leitura.mes == mes) {
+      resultado.add(leitura);
+    }
+  }
+
+  return resultado;
+}
+// Relatorio Anual Temperatura
+void imprimirRelatorioAnual(
+  List<LeituraClimatica> leituras,String estado,) {
+  final conversor = ConversorTemperatura();
+  final media = mediaTemperatura(leituras);
+
+
+  print('\nEstado: $estado');
+
+  print(
+    'Média: ${mediaTemperatura(leituras).toStringAsFixed(2)} °C',
+  );
+
+  print(
+    'Máxima: ${temperaturaMaxima(leituras).toStringAsFixed(2)} °C',
+  );
+
+  print(
+    'Mínima: ${temperaturaMinima(leituras).toStringAsFixed(2)} °C',
+  );
+  print(
+  'Celsius: ${media.toStringAsFixed(2)} °C',
+);
+
+print(
+  'Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',
+);
+
+print(
+  'Kelvin: ${conversor.calcularKelvin(media).toStringAsFixed(2)} K',
+);
+}
+
+// Relatorio Mensal Temperatura
+void imprimirRelatorioMensal(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+  final conversor = ConversorTemperatura();
+  
+
+  print('\n===== $estado =====');
+
+  for (var mes = 1; mes <= 12; mes++) {
+
+    final leiturasMes =
+        filtrarPorMes(leituras, mes);
+    final mediaMes = mediaTemperatura(leiturasMes);
+    if (leiturasMes.isEmpty) continue;
+
+    print('\n${meses[mes]}');
+
+    print(
+      'Média: ${mediaTemperatura(leiturasMes).toStringAsFixed(2)} °C',
+    );
+
+    print('Máxima: ${temperaturaMaxima(leiturasMes).toStringAsFixed(2)} °C',);
+
+    print('Mínima: ${temperaturaMinima(leiturasMes).toStringAsFixed(2)} °C',);
+
+    print(
+  'Celsius: ${mediaMes.toStringAsFixed(2)} °C',
+);
+
+print(
+  'Fahrenheit: ${conversor.calcularFahrenheit(mediaMes).toStringAsFixed(2)} °F',
+);
+
+print(
+  'Kelvin: ${conversor.calcularKelvin(mediaMes).toStringAsFixed(2)} K',
+);
+}
+  }
+
+// Relatorio Anual Umidade
+void imprimirRelatorioUmidadeAnual(
+  List<LeituraClimatica> leituras,String estado,) {
+  
+  
+
+  print('\nUmidade - $estado');
+
+  print(
+    'Média: ${mediaUmidade(leituras).toStringAsFixed(4)}',
+  );
+
+  print(
+    'Máxima: ${umidadeMaxima(leituras).toStringAsFixed(4)}',
+  );
+
+  print(
+    'Mínima: ${umidadeMinima(leituras).toStringAsFixed(4)}',
+  );
+
+}
+
+// Relatorio Mensal Umidade
+void imprimirRelatorioUmidadeMensal(
+  List<LeituraClimatica> leituras,String estado,) {
+
+  print('\n===== Umidade - $estado =====');
+
+  for (var mes = 1; mes <= 12; mes++) {
+
+    final leiturasMes =
+        filtrarPorMes(leituras, mes);
+
+    if (leiturasMes.isEmpty) continue;
+
+    print('\n${meses[mes]}');
+
+    print(
+      'Média: ${mediaUmidade(leiturasMes).toStringAsFixed(4)}',
+    );
+
+    print(
+      'Máxima: ${umidadeMaxima(leiturasMes).toStringAsFixed(4)}',
+    );
+
+    print(
+      'Mínima: ${umidadeMinima(leiturasMes).toStringAsFixed(4)}',
+    );
+  }
+}
+
+double direcaoMaisFrequente(List<LeituraClimatica> leituras, ) {
+
+  final frequencias = <double, int>{};
+
+  for (final leitura in leituras) {
+
+  if (leitura.direcaoVento == 0) {
+    continue;
+  }
+
+  frequencias[leitura.direcaoVento] =
+      (frequencias[leitura.direcaoVento] ?? 0) + 1;
+}
+
+  double direcaoMaisFrequente =
+      frequencias.keys.first;
+
+  int maiorQuantidade =
+      frequencias[direcaoMaisFrequente]!;
+
+  for (final entrada in frequencias.entries) {
+
+    if (entrada.value > maiorQuantidade) {
+
+      maiorQuantidade = entrada.value;
+      direcaoMaisFrequente = entrada.key;
+    }
+  }
+
+  return direcaoMaisFrequente;
+}
+
+// Relatorio Anual Direção
+void imprimirDirecaoAnual(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+  final conversor = ConversorDirecao();
+
+  final direcao =
+      direcaoMaisFrequente(leituras);
+
+  print('\nDireção do vento - $estado');
+
+  print(
+    'Graus: ${direcao.toStringAsFixed(2)}°',
+  );
+
+  print(
+    'Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',
+  );
+}
+
+// Relatorio Mensal Direção
+void imprimirDirecaoMensal(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+  final conversor = ConversorDirecao();
+
+  print('\n===== Direção - $estado =====');
+
+  for (var mes = 1; mes <= 12; mes++) {
+
+    final leiturasMes =
+        filtrarPorMes(leituras, mes);
+
+    if (leiturasMes.isEmpty) continue;
+
+    final direcao =
+        direcaoMaisFrequente(leiturasMes);
+
+    print('\n${meses[mes]}');
+
+    print(
+      'Graus: ${direcao.toStringAsFixed(2)}°',
+    );
+
+    print(
+      'Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',
+    );
+  }
+}
+
+List<LeituraClimatica> filtrarPorHora(
+  List<LeituraClimatica> leituras,
+  int hora,
+) {
+
+  final resultado = <LeituraClimatica>[];
+
+  for (final leitura in leituras) {
+    if (leitura.hora == hora) {
+      resultado.add(leitura);
+    }
+  }
+
+  return resultado;
+}
+
+void imprimirTemperaturaPorHorario(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+
+  print('\n===== Temperatura por Horário - $estado =====');
+
+  for (var hora = 1; hora <= 24; hora++) {
+
+    final leiturasHora =
+        filtrarPorHora(leituras, hora);
+
+    if (leiturasHora.isEmpty) continue;
+
+    print(
+      'Hora $hora: '
+      '${mediaTemperatura(leiturasHora).toStringAsFixed(2)} °C',
+    );
+  }
+
+}
+  double mediaVelocidadeVento(
+  List<LeituraClimatica> leituras,
+) {
+  double soma = 0;
+
+  for (final leitura in leituras) {
+    soma += leitura.velocidadeVento;
+  }
+
+  return soma / leituras.length;
+}
+
+double velocidadeMaxima(
+  List<LeituraClimatica> leituras,
+) {
+  double velocidade =
+      leituras.first.velocidadeVento;
+
+  for (final leitura in leituras) {
+    if (leitura.velocidadeVento >
+        velocidade) {
+      velocidade =
+          leitura.velocidadeVento;
+    }
+  }
+
+  return velocidade;
+}
+
+double velocidadeMinima(
+  List<LeituraClimatica> leituras,
+) {
+  double velocidade =
+      leituras.first.velocidadeVento;
+
+  for (final leitura in leituras) {
+    if (leitura.velocidadeVento <
+        velocidade) {
+      velocidade =
+          leitura.velocidadeVento;
+    }
+  }
+
+  return velocidade;
+}
+
+void imprimirVelocidadeAnual(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+  final conversor =
+      ConversorVento();
+
+  final media =
+      mediaVelocidadeVento(leituras);
+
+  print('\nVelocidade do vento - $estado');
+
+  print(
+    'Média: ${media.toStringAsFixed(2)} m/s',
+  );
+
+  print(
+    'Máxima: ${velocidadeMaxima(leituras).toStringAsFixed(2)} m/s',
+  );
+
+  print(
+    'Mínima: ${velocidadeMinima(leituras).toStringAsFixed(2)} m/s',
+  );
+
+  print(
+    'Km/h: ${conversor.paraKmPorHora(media).toStringAsFixed(2)}',
+  );
+
+  print(
+    'Mph: ${conversor.paraMph(media).toStringAsFixed(2)}',
+  );
+}
+
+void imprimirVelocidadeMensal(
+  List<LeituraClimatica> leituras,
+  String estado,
+) {
+  final conversor =
+      ConversorVento();
+
+  print('\n===== Velocidade - $estado =====');
+
+  for (var mes = 1; mes <= 12; mes++) {
+
+    final leiturasMes =
+        filtrarPorMes(leituras, mes);
+
+    if (leiturasMes.isEmpty) continue;
+
+    final mediaMes =
+        mediaVelocidadeVento(leiturasMes);
+
+    print('\n${meses[mes]}');
+
+    print(
+      'Média: ${mediaMes.toStringAsFixed(2)} m/s',
+    );
+
+    print(
+      'Máxima: ${velocidadeMaxima(leiturasMes).toStringAsFixed(2)} m/s',
+    );
+
+    print(
+      'Mínima: ${velocidadeMinima(leiturasMes).toStringAsFixed(2)} m/s',
+    );
+
+    print(
+      'Km/h: ${conversor.paraKmPorHora(mediaMes).toStringAsFixed(2)}',
+    );
+
+    print(
+      'Mph: ${conversor.paraMph(mediaMes).toStringAsFixed(2)}',
+    );
+  }
+}
+
+}
+
+
+   final meses = [
+    '',
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro',
+  ];
+
+
