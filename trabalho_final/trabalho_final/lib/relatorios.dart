@@ -7,6 +7,10 @@ import 'package:yaansi/yaansi.dart';
 class Relatorios {
 double mediaTemperatura(List<LeituraClimatica> leituras) {
 
+   if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
+
   double soma = 0;
 
   for (final leitura in leituras) {
@@ -317,9 +321,11 @@ void imprimirTemperaturaPorHorario(
   }
 
 }
-  double mediaVelocidadeVento(
-  List<LeituraClimatica> leituras,
-) {
+  double mediaVelocidadeVento(List<LeituraClimatica> leituras,) 
+  {
+   if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
   double soma = 0;
 
   for (final leitura in leituras) {

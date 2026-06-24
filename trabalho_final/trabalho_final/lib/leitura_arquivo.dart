@@ -28,21 +28,6 @@ class LeitorArquivo {
   return leituras;
 }
 
-List<LeituraClimatica> filtrarPorEstado(
-  List<LeituraClimatica> leituras,
-  String estado,
-) {
-
-  final resultado = <LeituraClimatica>[];
-
-  for (final leitura in leituras) {
-    if (leitura.estado == estado) {
-      resultado.add(leitura);
-    }
-  }
-
-  return resultado;
-}
   Future<List<String>> lerArquivo(String caminho) async {
     final arquivo = File(caminho);
 
