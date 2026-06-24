@@ -1,5 +1,6 @@
 import 'leituraClimatica.dart';
 import 'converso.dart';
+import 'package:yaansi/yaansi.dart';
 
 
 
