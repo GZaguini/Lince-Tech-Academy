@@ -1,3 +1,4 @@
+// Classe que representa uma leitura climática.
 class LeituraClimatica {
   
   LeituraClimatica(

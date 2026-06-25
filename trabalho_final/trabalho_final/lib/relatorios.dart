@@ -3,7 +3,7 @@ import 'converso.dart';
 import 'package:yaansi/yaansi.dart';
 
 
-
+// Calcula a média das temperaturas da lista.
 class Relatorios {
 double mediaTemperatura(List<LeituraClimatica> leituras) {
 
@@ -19,8 +19,11 @@ double mediaTemperatura(List<LeituraClimatica> leituras) {
 
   return soma / leituras.length;
 }
-
+// Retorna a maior temperatura encontrada.
 double temperaturaMaxima(List<LeituraClimatica> leituras) {
+    if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
   double temperatura = leituras.first.temperatura;
 
   for (final leitura in leituras) {
@@ -31,8 +34,12 @@ double temperaturaMaxima(List<LeituraClimatica> leituras) {
 
   return temperatura;
 }
-
+// Retorna a menor temperatura encontrada.
 double temperaturaMinima(List<LeituraClimatica> leituras) {
+    if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
+
   double temperatura = leituras.first.temperatura;
 
   for (final leitura in leituras) {
@@ -43,6 +50,7 @@ double temperaturaMinima(List<LeituraClimatica> leituras) {
 
   return temperatura;
 }
+// Calcula a média da umidade
  double mediaUmidade(List<LeituraClimatica> leituras){
 
   if (leituras.isEmpty) {
@@ -57,8 +65,11 @@ double temperaturaMinima(List<LeituraClimatica> leituras) {
 
   return soma / leituras.length;
 }
-
+// Retorna a maior umidade registrada.
  double umidadeMaxima(List<LeituraClimatica> leituras) {
+    if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
   double umidade = leituras.first.umidade;
 
   for (final leitura in leituras) {
@@ -69,9 +80,11 @@ double temperaturaMinima(List<LeituraClimatica> leituras) {
 
   return umidade;
 }
-
-
+// Retorna a menor umidade registrada.
 double umidadeMinima(List<LeituraClimatica> leituras) {
+    if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
   double umidade = leituras.first.umidade;
 
   for (final leitura in leituras) {
@@ -82,7 +95,7 @@ double umidadeMinima(List<LeituraClimatica> leituras) {
 
   return umidade;
 }
-
+// Filtra todas as leituras de um estado específico.
 List<LeituraClimatica> filtrarPorEstado(
   List<LeituraClimatica> leituras,
   String estado,
@@ -98,7 +111,7 @@ List<LeituraClimatica> filtrarPorEstado(
 
   return resultado;
 }
-
+// Filtra as leituras de um mês específico.
 List<LeituraClimatica> filtrarPorMes(
   List<LeituraClimatica> leituras,
   int mes,
@@ -208,7 +221,7 @@ void imprimirRelatorioUmidadeMensal(
 
   }
 }
-
+// Retorna a direção do vento mais frequente.
 double direcaoMaisFrequente(List<LeituraClimatica> leituras, ) {
 
   final frequencias = <double, int>{};
@@ -285,7 +298,7 @@ void imprimirDirecaoMensal(
 
   }
 }
-
+// Filtra leituras de uma hora específica.
 List<LeituraClimatica> filtrarPorHora(
   List<LeituraClimatica> leituras,
   int hora,
@@ -301,7 +314,7 @@ List<LeituraClimatica> filtrarPorHora(
 
   return resultado;
 }
-
+// Exibe a temperatura média para cada horário do dia.
 void imprimirTemperaturaPorHorario(
   List<LeituraClimatica> leituras,
   String estado,
@@ -321,6 +334,7 @@ void imprimirTemperaturaPorHorario(
   }
 
 }
+// Calcula a velocidade média do vento.
   double mediaVelocidadeVento(List<LeituraClimatica> leituras,) 
   {
    if (leituras.isEmpty) {
@@ -334,10 +348,11 @@ void imprimirTemperaturaPorHorario(
 
   return soma / leituras.length;
 }
-
-double velocidadeMaxima(
-  List<LeituraClimatica> leituras,
-) {
+// Retorna a maior velocidade do vento registrada.
+double velocidadeMaxima(List<LeituraClimatica> leituras,) {
+    if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
   double velocidade =
       leituras.first.velocidadeVento;
 
@@ -351,12 +366,13 @@ double velocidadeMaxima(
 
   return velocidade;
 }
-
+// Retorna a menor velocidade do vento registrada.
 double velocidadeMinima(
-  List<LeituraClimatica> leituras,
-) {
-  double velocidade =
-      leituras.first.velocidadeVento;
+  List<LeituraClimatica> leituras,) {
+      if (leituras.isEmpty) {
+    throw Exception('Lista de leituras vazia');
+  }
+  double velocidade = leituras.first.velocidadeVento;
 
   for (final leitura in leituras) {
     if (leitura.velocidadeVento <
@@ -368,16 +384,11 @@ double velocidadeMinima(
 
   return velocidade;
 }
+// Exibe o relatório anual da velocidade do vento.
+void imprimirVelocidadeAnual(List<LeituraClimatica> leituras,String estado,) {
+  final conversor =ConversorVento();
 
-void imprimirVelocidadeAnual(
-  List<LeituraClimatica> leituras,
-  String estado,
-) {
-  final conversor =
-      ConversorVento();
-
-  final media =
-      mediaVelocidadeVento(leituras);
+  final media = mediaVelocidadeVento(leituras);
 
   print('\nVelocidade do vento - $estado');
 
@@ -392,13 +403,9 @@ void imprimirVelocidadeAnual(
   print('Mph: ${conversor.paraMph(media).toStringAsFixed(2)}',);
 
 }
-
-void imprimirVelocidadeMensal(
-  List<LeituraClimatica> leituras,
-  String estado,
-) {
-  final conversor =
-      ConversorVento();
+// Exibe o relatório mensal da velocidade do vento.
+void imprimirVelocidadeMensal(List<LeituraClimatica> leituras,String estado,) {
+  final conversor =ConversorVento();
 
   print('\n===== Velocidade - $estado =====');
 

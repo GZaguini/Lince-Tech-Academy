@@ -3,7 +3,7 @@ import 'dart:io';
 import 'leitura_arquivo.dart';
 import 'relatorios.dart';
 
-
+// Classe responsável por exibir o menu e chamar os relatórios.
 class Menu {
 
   Future<void> mostrar() async {
@@ -12,15 +12,16 @@ class Menu {
     final relatorio = Relatorios();
 
     try{
-    
+    // Carrega todas as leituras dos arquivos CSV.
     final leituras = await leitor.lerTodosArquivos(
       'C:/Users/guilh/OneDrive/Desktop/Clima/sensores',
     );
+     // Verifica se existem dados para processar.
     if (leituras.isEmpty) {
     print('Nenhum arquivo encontrado.');
     return;
     }
-   
+    // Separa as leituras por estado.
     final leiturasSC =
         relatorio.filtrarPorEstado(
       leituras,
@@ -38,7 +39,7 @@ class Menu {
     print('Que relatório você precisa?\n');
 
     while (true) {
-
+      // Exibe as opções disponíveis para o usuário.
       print('\n===== MENU =====');
       print('1 - Temperatura');
       print('2 - Umidade');
@@ -47,21 +48,21 @@ class Menu {
 
       try {
       final opcao = int.parse(stdin.readLineSync()!);
-
+      // Lê a opção digitada pelo usuário.
       switch (opcao) {
      
       case 1:
-
+        // Relatórios de temperatura.
         relatorio.imprimirRelatorioAnual(
           leiturasSC,
           'SC',
         );
-
+        
         relatorio.imprimirRelatorioAnual(
           leiturasSP,
           'SP',
         );
-
+        
         relatorio.imprimirRelatorioMensal(
           leiturasSC,
           'SC',
@@ -83,7 +84,7 @@ class Menu {
         );
 
         break;
-
+      // Relatórios de umidade e velocidade do vento.
       case 2:
          print('\n===== UMIDADE =====');
         relatorio.imprimirRelatorioUmidadeAnual(
@@ -117,7 +118,7 @@ class Menu {
         relatorio.imprimirVelocidadeMensal(leiturasSP, 'SP');
 
         break;
-
+      // Relatórios de direção do vento.
       case 3:
 
         relatorio.imprimirDirecaoAnual(
@@ -140,6 +141,7 @@ class Menu {
           'SP',
         );
         break;
+       // Encerra o programa.
       case 4: 
       print('Finalizado');
       return;

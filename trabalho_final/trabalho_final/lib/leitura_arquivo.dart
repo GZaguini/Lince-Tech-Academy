@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'leituraClimatica.dart';
 
-
+// Classe responsável pela leitura dos arquivos CSV.
 class LeitorArquivo {
-  
+// Lê todos os arquivos CSV de uma pasta e reúne as leituras.
  Future<List<LeituraClimatica>> lerTodosArquivos(
   String pasta,
 ) async {
@@ -27,7 +27,7 @@ class LeitorArquivo {
 
   return leituras;
 }
-
+  // Lê o conteúdo de um arquivo texto.
   Future<List<String>> lerArquivo(String caminho) async {
     final arquivo = File(caminho);
 
@@ -37,7 +37,7 @@ class LeitorArquivo {
 
     return const LineSplitter().convert(texto);
   }
-
+// Converte as linhas do arquivo em objetos LeituraClimatica.
  Future<List<LeituraClimatica>> lerLeituras(
   String caminho,
 ) async {
@@ -45,13 +45,13 @@ class LeitorArquivo {
   final linhas = await lerArquivo(caminho);
 
   final leituras = <LeituraClimatica>[];
-
+  // Obtém estado e ano a partir do nome do arquivo.
   final nomeArquivo = File(caminho).uri.pathSegments.last;
   final partes = nomeArquivo.replaceAll('.csv', '').split('_');
 
   final estado = partes[0];
   final ano = int.parse(partes[1]);
-
+  // Ignora o cabeçalho e processa os dados do arquivo.
   for (final linha in linhas.skip(1)) {
 
     final dados = linha.split(',');
