@@ -1,0 +1,108 @@
+
+Direção do vento - SC
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Direção do vento - SP
+[93mGraus: 120.00°[39m
+[93mRadianos: 2.09 rad[39m
+
+===== Direção - SC =====
+
+Janeiro
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Fevereiro
+[93mGraus: 210.00°[39m
+[93mRadianos: 3.67 rad[39m
+
+Março
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Abril
+[93mGraus: 360.00°[39m
+[93mRadianos: 6.28 rad[39m
+
+Maio
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Junho
+[93mGraus: 360.00°[39m
+[93mRadianos: 6.28 rad[39m
+
+Julho
+[93mGraus: 360.00°[39m
+[93mRadianos: 6.28 rad[39m
+
+Agosto
+[93mGraus: 360.00°[39m
+[93mRadianos: 6.28 rad[39m
+
+Setembro
+[93mGraus: 360.00°[39m
+[93mRadianos: 6.28 rad[39m
+
+Outubro
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Novembro
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Dezembro
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+===== Direção - SP =====
+
+Janeiro
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Fevereiro
+[93mGraus: 120.00°[39m
+[93mRadianos: 2.09 rad[39m
+
+Março
+[93mGraus: 140.00°[39m
+[93mRadianos: 2.44 rad[39m
+
+Abril
+[93mGraus: 150.00°[39m
+[93mRadianos: 2.62 rad[39m
+
+Maio
+[93mGraus: 120.00°[39m
+[93mRadianos: 2.09 rad[39m
+
+Junho
+[93mGraus: 40.00°[39m
+[93mRadianos: 0.70 rad[39m
+
+Julho
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Agosto
+[93mGraus: 30.00°[39m
+[93mRadianos: 0.52 rad[39m
+
+Setembro
+[93mGraus: 180.00°[39m
+[93mRadianos: 3.14 rad[39m
+
+Outubro
+[93mGraus: 180.00°[39m
+[93mRadianos: 3.14 rad[39m
+
+Novembro
+[93mGraus: 120.00°[39m
+[93mRadianos: 2.09 rad[39m
+
+Dezembro
+[93mGraus: 150.00°[39m
+[93mRadianos: 2.62 rad[39m

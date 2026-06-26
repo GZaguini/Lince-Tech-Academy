@@ -1,0 +1,320 @@
+
+Umidade - SC
+[92mMédia: 0.0132[39m
+[91mMáxima: 0.0291[39m
+[94mMínima: 0.0033[39m
+
+Umidade - SP
+[92mMédia: 0.0121[39m
+[91mMáxima: 0.0211[39m
+[94mMínima: 0.0049[39m
+
+===== Umidade - SC =====
+
+Janeiro
+[92mMédia: 0.0173[39m
+[91mMáxima: 0.0291[39m
+[94mMínima: 0.0121[39m
+
+Fevereiro
+[92mMédia: 0.0168[39m
+[91mMáxima: 0.0224[39m
+[94mMínima: 0.0102[39m
+
+Março
+[92mMédia: 0.0164[39m
+[91mMáxima: 0.0223[39m
+[94mMínima: 0.0100[39m
+
+Abril
+[92mMédia: 0.0135[39m
+[91mMáxima: 0.0195[39m
+[94mMínima: 0.0080[39m
+
+Maio
+[92mMédia: 0.0112[39m
+[91mMáxima: 0.0164[39m
+[94mMínima: 0.0056[39m
+
+Junho
+[92mMédia: 0.0101[39m
+[91mMáxima: 0.0175[39m
+[94mMínima: 0.0043[39m
+
+Julho
+[92mMédia: 0.0106[39m
+[91mMáxima: 0.0143[39m
+[94mMínima: 0.0047[39m
+
+Agosto
+[92mMédia: 0.0103[39m
+[91mMáxima: 0.0146[39m
+[94mMínima: 0.0033[39m
+
+Setembro
+[92mMédia: 0.0122[39m
+[91mMáxima: 0.0156[39m
+[94mMínima: 0.0074[39m
+
+Outubro
+[92mMédia: 0.0123[39m
+[91mMáxima: 0.0183[39m
+[94mMínima: 0.0059[39m
+
+Novembro
+[92mMédia: 0.0135[39m
+[91mMáxima: 0.0205[39m
+[94mMínima: 0.0072[39m
+
+Dezembro
+[92mMédia: 0.0142[39m
+[91mMáxima: 0.0214[39m
+[94mMínima: 0.0088[39m
+
+===== Umidade - SP =====
+
+Janeiro
+[92mMédia: 0.0147[39m
+[91mMáxima: 0.0204[39m
+[94mMínima: 0.0093[39m
+
+Fevereiro
+[92mMédia: 0.0153[39m
+[91mMáxima: 0.0211[39m
+[94mMínima: 0.0113[39m
+
+Março
+[92mMédia: 0.0147[39m
+[91mMáxima: 0.0199[39m
+[94mMínima: 0.0110[39m
+
+Abril
+[92mMédia: 0.0122[39m
+[91mMáxima: 0.0165[39m
+[94mMínima: 0.0087[39m
+
+Maio
+[92mMédia: 0.0114[39m
+[91mMáxima: 0.0159[39m
+[94mMínima: 0.0079[39m
+
+Junho
+[92mMédia: 0.0109[39m
+[91mMáxima: 0.0148[39m
+[94mMínima: 0.0056[39m
+
+Julho
+[92mMédia: 0.0097[39m
+[91mMáxima: 0.0126[39m
+[94mMínima: 0.0071[39m
+
+Agosto
+[92mMédia: 0.0092[39m
+[91mMáxima: 0.0135[39m
+[94mMínima: 0.0049[39m
+
+Setembro
+[92mMédia: 0.0110[39m
+[91mMáxima: 0.0143[39m
+[94mMínima: 0.0068[39m
+
+Outubro
+[92mMédia: 0.0118[39m
+[91mMáxima: 0.0163[39m
+[94mMínima: 0.0073[39m
+
+Novembro
+[92mMédia: 0.0120[39m
+[91mMáxima: 0.0156[39m
+[94mMínima: 0.0063[39m
+
+Dezembro
+[92mMédia: 0.0125[39m
+[91mMáxima: 0.0199[39m
+[94mMínima: 0.0065[39m
+
+Velocidade do vento - SC
+Média: 2.94 m/s
+Máxima: 13.00 m/s
+Mínima: 0.00 m/s
+Km/h: 10.57
+Mph: 6.57
+
+Velocidade do vento - SP
+Média: 3.98 m/s
+Máxima: 18.00 m/s
+Mínima: 0.00 m/s
+Km/h: 14.33
+Mph: 8.90
+
+===== Velocidade - SC =====
+
+Janeiro
+Média: 3.50 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 12.60
+Mph: 7.83
+
+Fevereiro
+Média: 2.60 m/s
+Máxima: 8.00 m/s
+Mínima: 0.00 m/s
+Km/h: 9.37
+Mph: 5.82
+
+Março
+Média: 3.04 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 10.94
+Mph: 6.80
+
+Abril
+Média: 2.31 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 8.31
+Mph: 5.17
+
+Maio
+Média: 2.60 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 9.38
+Mph: 5.83
+
+Junho
+Média: 2.54 m/s
+Máxima: 9.00 m/s
+Mínima: 0.00 m/s
+Km/h: 9.15
+Mph: 5.69
+
+Julho
+Média: 2.64 m/s
+Máxima: 11.00 m/s
+Mínima: 0.00 m/s
+Km/h: 9.51
+Mph: 5.91
+
+Agosto
+Média: 3.02 m/s
+Máxima: 12.00 m/s
+Mínima: 0.00 m/s
+Km/h: 10.88
+Mph: 6.76
+
+Setembro
+Média: 2.78 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 10.02
+Mph: 6.23
+
+Outubro
+Média: 3.34 m/s
+Máxima: 13.00 m/s
+Mínima: 0.00 m/s
+Km/h: 12.01
+Mph: 7.47
+
+Novembro
+Média: 3.39 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 12.22
+Mph: 7.59
+
+Dezembro
+Média: 3.42 m/s
+Máxima: 13.00 m/s
+Mínima: 0.00 m/s
+Km/h: 12.30
+Mph: 7.65
+
+===== Velocidade - SP =====
+
+Janeiro
+Média: 3.66 m/s
+Máxima: 15.00 m/s
+Mínima: 0.00 m/s
+Km/h: 13.16
+Mph: 8.18
+
+Fevereiro
+Média: 3.77 m/s
+Máxima: 18.00 m/s
+Mínima: 0.00 m/s
+Km/h: 13.57
+Mph: 8.43
+
+Março
+Média: 3.56 m/s
+Máxima: 10.00 m/s
+Mínima: 0.00 m/s
+Km/h: 12.82
+Mph: 7.97
+
+Abril
+Média: 3.95 m/s
+Máxima: 11.00 m/s
+Mínima: 0.00 m/s
+Km/h: 14.21
+Mph: 8.83
+
+Maio
+Média: 4.12 m/s
+Máxima: 12.00 m/s
+Mínima: 0.00 m/s
+Km/h: 14.84
+Mph: 9.22
+
+Junho
+Média: 3.16 m/s
+Máxima: 12.00 m/s
+Mínima: 0.00 m/s
+Km/h: 11.38
+Mph: 7.07
+
+Julho
+Média: 3.77 m/s
+Máxima: 14.00 m/s
+Mínima: 0.00 m/s
+Km/h: 13.56
+Mph: 8.43
+
+Agosto
+Média: 3.87 m/s
+Máxima: 14.00 m/s
+Mínima: 0.00 m/s
+Km/h: 13.93
+Mph: 8.66
+
+Setembro
+Média: 4.30 m/s
+Máxima: 12.00 m/s
+Mínima: 0.00 m/s
+Km/h: 15.49
+Mph: 9.63
+
+Outubro
+Média: 4.65 m/s
+Máxima: 17.00 m/s
+Mínima: 0.00 m/s
+Km/h: 16.74
+Mph: 10.40
+
+Novembro
+Média: 4.47 m/s
+Máxima: 11.00 m/s
+Mínima: 0.00 m/s
+Km/h: 16.10
+Mph: 10.00
+
+Dezembro
+Média: 4.47 m/s
+Máxima: 14.00 m/s
+Mínima: 0.00 m/s
+Km/h: 16.07
+Mph: 9.99

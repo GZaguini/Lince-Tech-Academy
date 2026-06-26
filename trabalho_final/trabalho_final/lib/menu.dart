@@ -6,7 +6,8 @@ import 'relatorios.dart';
 
 // Classe responsável por exibir o menu e chamar os relatórios.
 class Menu {
-
+  final leitor = LeitorArquivo();
+  final relatorio = Relatorios();
   Future<void> mostrar() async {
 
     final leitor = LeitorArquivo();
@@ -16,7 +17,7 @@ class Menu {
     try{
     // Carrega todas as leituras dos arquivos CSV.
     final leituras = await leitor.lerTodosArquivos(
-      'C:/Users/guilh/OneDrive/Desktop/Clima/sensores',
+      'C:/CLIMA/SENSORES',
     );
      // Verifica se existem dados para processar.
     if (leituras.isEmpty) {
@@ -85,7 +86,11 @@ class Menu {
           'SP',
         );
 
-        await relatorio.salvar.salvar('CLIMA.txt',relatorio.buffer.conteudo,);
+        final nomeArquivo = relatorio.salvar.gerarNomeArquivo('CLIMA');
+
+        await relatorio.salvar.salvar( nomeArquivo,relatorio.buffer.conteudo,);
+
+        relatorio.buffer.limpar();
         break;
       // Relatórios de umidade e velocidade do vento.
       case 2:
@@ -120,7 +125,11 @@ class Menu {
 
         relatorio.imprimirVelocidadeMensal(leiturasSP, 'SP');
 
-        await relatorio.salvar.salvar('Umidade.txt',relatorio.buffer.conteudo,);
+        final nomeArquivo = relatorio.salvar.gerarNomeArquivo('UMIDADE');
+
+        await relatorio.salvar.salvar(nomeArquivo,relatorio.buffer.conteudo,);
+
+        relatorio.buffer.limpar();
 
         break;
       // Relatórios de direção do vento.
@@ -146,7 +155,11 @@ class Menu {
           'SP',
         );
 
-        await relatorio.salvar.salvar('VENTO.txt',relatorio.buffer.conteudo,);
+        final nomeArquivo = relatorio.salvar.gerarNomeArquivo('VENTO');
+
+        await relatorio.salvar.salvar(nomeArquivo,relatorio.buffer.conteudo,);
+        
+        relatorio.buffer.limpar();
         break;
        // Encerra o programa.
       case 4: 
