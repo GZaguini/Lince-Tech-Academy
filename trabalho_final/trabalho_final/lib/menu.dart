@@ -3,6 +3,7 @@ import 'dart:io';
 import 'leitura_arquivo.dart';
 import 'relatorios.dart';
 
+
 // Classe responsável por exibir o menu e chamar os relatórios.
 class Menu {
 
@@ -10,6 +11,7 @@ class Menu {
 
     final leitor = LeitorArquivo();
     final relatorio = Relatorios();
+   
 
     try{
     // Carrega todas as leituras dos arquivos CSV.
@@ -83,6 +85,7 @@ class Menu {
           'SP',
         );
 
+        await relatorio.salvar.salvar('CLIMA.txt',relatorio.buffer.conteudo,);
         break;
       // Relatórios de umidade e velocidade do vento.
       case 2:
@@ -117,6 +120,8 @@ class Menu {
 
         relatorio.imprimirVelocidadeMensal(leiturasSP, 'SP');
 
+        await relatorio.salvar.salvar('Umidade.txt',relatorio.buffer.conteudo,);
+
         break;
       // Relatórios de direção do vento.
       case 3:
@@ -140,6 +145,8 @@ class Menu {
           leiturasSP,
           'SP',
         );
+
+        await relatorio.salvar.salvar('VENTO.txt',relatorio.buffer.conteudo,);
         break;
        // Encerra o programa.
       case 4: 

@@ -1,0 +1,264 @@
+
+Estado: SC
+Média: 18.81 °C
+Máxima: 31.70 °C
+Mínima: 1.60 °C
+[91mCelsius: 18.81 °C[39m
+[93mFahrenheit: 65.87 °F[39m
+[94mKelvin: 291.96 K[39m
+
+Estado: SP
+Média: 16.47 °C
+Máxima: 26.20 °C
+Mínima: 7.00 °C
+[91mCelsius: 16.47 °C[39m
+[93mFahrenheit: 61.65 °F[39m
+[94mKelvin: 289.62 K[39m
+
+===== SC =====
+
+Janeiro
+Média: 23.03 °C
+Máxima: 31.70 °C
+Mínima: 18.00 °C
+[91mCelsius: 23.03 °C[39m
+[93mFahrenheit: 73.45 °F[39m
+[94mKelvin: 296.18 K[39m
+
+Fevereiro
+Média: 22.63 °C
+Máxima: 28.00 °C
+Mínima: 16.10 °C
+[91mCelsius: 22.63 °C[39m
+[93mFahrenheit: 72.73 °F[39m
+[94mKelvin: 295.78 K[39m
+
+Março
+Média: 22.39 °C
+Máxima: 27.80 °C
+Mínima: 16.30 °C
+[91mCelsius: 22.39 °C[39m
+[93mFahrenheit: 72.30 °F[39m
+[94mKelvin: 295.54 K[39m
+
+Abril
+Média: 19.46 °C
+Máxima: 25.20 °C
+Mínima: 11.80 °C
+[91mCelsius: 19.46 °C[39m
+[93mFahrenheit: 67.02 °F[39m
+[94mKelvin: 292.61 K[39m
+
+Maio
+Média: 16.81 °C
+Máxima: 22.70 °C
+Mínima: 8.50 °C
+[91mCelsius: 16.81 °C[39m
+[93mFahrenheit: 62.26 °F[39m
+[94mKelvin: 289.96 K[39m
+
+Junho
+Média: 15.13 °C
+Máxima: 24.00 °C
+Mínima: 3.00 °C
+[91mCelsius: 15.13 °C[39m
+[93mFahrenheit: 59.23 °F[39m
+[94mKelvin: 288.28 K[39m
+
+Julho
+Média: 15.80 °C
+Máxima: 22.00 °C
+Mínima: 4.80 °C
+[91mCelsius: 15.80 °C[39m
+[93mFahrenheit: 60.44 °F[39m
+[94mKelvin: 288.95 K[39m
+
+Agosto
+Média: 15.32 °C
+Máxima: 20.70 °C
+Mínima: 1.60 °C
+[91mCelsius: 15.32 °C[39m
+[93mFahrenheit: 59.57 °F[39m
+[94mKelvin: 288.47 K[39m
+
+Setembro
+Média: 17.73 °C
+Máxima: 21.70 °C
+Mínima: 11.20 °C
+[91mCelsius: 17.73 °C[39m
+[93mFahrenheit: 63.91 °F[39m
+[94mKelvin: 290.88 K[39m
+
+Outubro
+Média: 17.98 °C
+Máxima: 24.50 °C
+Mínima: 9.80 °C
+[91mCelsius: 17.98 °C[39m
+[93mFahrenheit: 64.36 °F[39m
+[94mKelvin: 291.13 K[39m
+
+Novembro
+Média: 19.40 °C
+Máxima: 26.30 °C
+Mínima: 11.80 °C
+[91mCelsius: 19.40 °C[39m
+[93mFahrenheit: 66.91 °F[39m
+[94mKelvin: 292.55 K[39m
+
+Dezembro
+Média: 20.36 °C
+Máxima: 26.70 °C
+Mínima: 13.00 °C
+[91mCelsius: 20.36 °C[39m
+[93mFahrenheit: 68.65 °F[39m
+[94mKelvin: 293.51 K[39m
+
+===== SP =====
+
+Janeiro
+Média: 19.62 °C
+Máxima: 24.70 °C
+Mínima: 15.00 °C
+[91mCelsius: 19.62 °C[39m
+[93mFahrenheit: 67.32 °F[39m
+[94mKelvin: 292.77 K[39m
+
+Fevereiro
+Média: 19.98 °C
+Máxima: 26.20 °C
+Mínima: 16.30 °C
+[91mCelsius: 19.98 °C[39m
+[93mFahrenheit: 67.96 °F[39m
+[94mKelvin: 293.13 K[39m
+
+Março
+Média: 19.27 °C
+Máxima: 24.50 °C
+Mínima: 14.80 °C
+[91mCelsius: 19.27 °C[39m
+[93mFahrenheit: 66.69 °F[39m
+[94mKelvin: 292.42 K[39m
+
+Abril
+Média: 16.54 °C
+Máxima: 21.10 °C
+Mínima: 11.00 °C
+[91mCelsius: 16.54 °C[39m
+[93mFahrenheit: 61.77 °F[39m
+[94mKelvin: 289.69 K[39m
+
+Maio
+Média: 15.33 °C
+Máxima: 21.00 °C
+Mínima: 9.20 °C
+[91mCelsius: 15.33 °C[39m
+[93mFahrenheit: 59.59 °F[39m
+[94mKelvin: 288.48 K[39m
+
+Junho
+Média: 14.90 °C
+Máxima: 20.20 °C
+Mínima: 8.10 °C
+[91mCelsius: 14.90 °C[39m
+[93mFahrenheit: 58.82 °F[39m
+[94mKelvin: 288.05 K[39m
+
+Julho
+Média: 13.59 °C
+Máxima: 17.80 °C
+Mínima: 9.10 °C
+[91mCelsius: 13.59 °C[39m
+[93mFahrenheit: 56.47 °F[39m
+[94mKelvin: 286.74 K[39m
+
+Agosto
+Média: 13.55 °C
+Máxima: 19.60 °C
+Mínima: 7.00 °C
+[91mCelsius: 13.55 °C[39m
+[93mFahrenheit: 56.39 °F[39m
+[94mKelvin: 286.70 K[39m
+
+Setembro
+Média: 15.44 °C
+Máxima: 21.00 °C
+Mínima: 9.00 °C
+[91mCelsius: 15.44 °C[39m
+[93mFahrenheit: 59.78 °F[39m
+[94mKelvin: 288.59 K[39m
+
+Outubro
+Média: 15.97 °C
+Máxima: 22.10 °C
+Mínima: 9.60 °C
+[91mCelsius: 15.97 °C[39m
+[93mFahrenheit: 60.74 °F[39m
+[94mKelvin: 289.12 K[39m
+
+Novembro
+Média: 16.49 °C
+Máxima: 21.00 °C
+Mínima: 12.10 °C
+[91mCelsius: 16.49 °C[39m
+[93mFahrenheit: 61.68 °F[39m
+[94mKelvin: 289.64 K[39m
+
+Dezembro
+Média: 17.23 °C
+Máxima: 24.00 °C
+Mínima: 11.80 °C
+[91mCelsius: 17.23 °C[39m
+[93mFahrenheit: 63.01 °F[39m
+[94mKelvin: 290.38 K[39m
+
+===== Temperatura por Horário - SC =====
+Hora 1: 18.07 °C
+Hora 2: 17.95 °C
+Hora 3: 17.84 °C
+Hora 4: 17.78 °C
+Hora 5: 17.63 °C
+Hora 6: 17.45 °C
+Hora 7: 17.38 °C
+Hora 8: 17.59 °C
+Hora 9: 18.20 °C
+Hora 10: 18.88 °C
+Hora 11: 19.51 °C
+Hora 12: 19.98 °C
+Hora 13: 20.37 °C
+Hora 14: 20.54 °C
+Hora 15: 20.53 °C
+Hora 16: 20.42 °C
+Hora 17: 20.13 °C
+Hora 18: 19.76 °C
+Hora 19: 19.26 °C
+Hora 20: 18.84 °C
+Hora 21: 18.60 °C
+Hora 22: 18.41 °C
+Hora 23: 18.27 °C
+Hora 24: 18.15 °C
+
+===== Temperatura por Horário - SP =====
+Hora 1: 15.93 °C
+Hora 2: 15.79 °C
+Hora 3: 15.63 °C
+Hora 4: 15.46 °C
+Hora 5: 15.31 °C
+Hora 6: 15.15 °C
+Hora 7: 15.07 °C
+Hora 8: 15.16 °C
+Hora 9: 15.57 °C
+Hora 10: 16.17 °C
+Hora 11: 16.88 °C
+Hora 12: 17.36 °C
+Hora 13: 17.70 °C
+Hora 14: 17.91 °C
+Hora 15: 17.96 °C
+Hora 16: 17.90 °C
+Hora 17: 17.76 °C
+Hora 18: 17.48 °C
+Hora 19: 17.11 °C
+Hora 20: 16.78 °C
+Hora 21: 16.53 °C
+Hora 22: 16.39 °C
+Hora 23: 16.22 °C
+Hora 24: 16.08 °C

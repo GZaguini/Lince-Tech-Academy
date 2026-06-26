@@ -1,10 +1,14 @@
 import 'leituraClimatica.dart';
 import 'converso.dart';
 import 'package:yaansi/yaansi.dart';
+import 'salvar_arquivo.dart';
+  
 
 
 // Calcula a média das temperaturas da lista.
 class Relatorios {
+  final buffer = RelatorioBuffer();
+  final salvar = SalvarArquivo();
 double mediaTemperatura(List<LeituraClimatica> leituras) {
 
    if (leituras.isEmpty) {
@@ -134,19 +138,19 @@ void imprimirRelatorioAnual(
   final media = mediaTemperatura(leituras);
 
 
-  print('\nEstado: $estado');
+  buffer.escrever('\nEstado: $estado');
 
-  print('Média: ${mediaTemperatura(leituras).toStringAsFixed(2)} °C',);
+  buffer.escrever('Média: ${mediaTemperatura(leituras).toStringAsFixed(2)} °C',);
 
-  print('Máxima: ${temperaturaMaxima(leituras).toStringAsFixed(2)} °C',);
+  buffer.escrever('Máxima: ${temperaturaMaxima(leituras).toStringAsFixed(2)} °C',);
 
-  print('Mínima: ${temperaturaMinima(leituras).toStringAsFixed(2)} °C',);
+  buffer.escrever('Mínima: ${temperaturaMinima(leituras).toStringAsFixed(2)} °C',);
 
-  print(red('Celsius: ${media.toStringAsFixed(2)} °C',));
+  buffer.escrever(red('Celsius: ${media.toStringAsFixed(2)} °C',));
 
-  print(yellow ('Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',));
+  buffer.escrever(yellow ('Fahrenheit: ${conversor.calcularFahrenheit(media).toStringAsFixed(2)} °F',));
 
-  print(blue('Kelvin: ${conversor.calcularKelvin(media).toStringAsFixed(2)} K',));
+  buffer.escrever(blue('Kelvin: ${conversor.calcularKelvin(media).toStringAsFixed(2)} K',));
 
 }
 
@@ -157,7 +161,7 @@ void imprimirRelatorioMensal(
 ) {
   final conversor = ConversorTemperatura();
 
-  print('\n===== $estado =====');
+  buffer.escrever('\n===== $estado =====');
 
   for (var mes = 1; mes <= 12; mes++) {
 
@@ -165,19 +169,19 @@ void imprimirRelatorioMensal(
     if (leiturasMes.isEmpty) continue;
     final mediaMes = mediaTemperatura(leiturasMes);
     
-    print('\n${meses[mes]}');
+    buffer.escrever('\n${meses[mes]}');
 
-    print('Média: ${mediaTemperatura(leiturasMes).toStringAsFixed(2)} °C',);
+    buffer.escrever('Média: ${mediaTemperatura(leiturasMes).toStringAsFixed(2)} °C',);
 
-    print('Máxima: ${temperaturaMaxima(leiturasMes).toStringAsFixed(2)} °C',);
+    buffer.escrever('Máxima: ${temperaturaMaxima(leiturasMes).toStringAsFixed(2)} °C',);
 
-    print('Mínima: ${temperaturaMinima(leiturasMes).toStringAsFixed(2)} °C',);
+    buffer.escrever('Mínima: ${temperaturaMinima(leiturasMes).toStringAsFixed(2)} °C',);
 
-    print(red('Celsius: ${mediaMes.toStringAsFixed(2)} °C',));
+    buffer.escrever(red('Celsius: ${mediaMes.toStringAsFixed(2)} °C',));
 
-    print(yellow('Fahrenheit: ${conversor.calcularFahrenheit(mediaMes).toStringAsFixed(2)} °F',));
+    buffer.escrever(yellow('Fahrenheit: ${conversor.calcularFahrenheit(mediaMes).toStringAsFixed(2)} °F',));
 
-    print(blue('Kelvin: ${conversor.calcularKelvin(mediaMes).toStringAsFixed(2)} K',));   
+    buffer.escrever(blue('Kelvin: ${conversor.calcularKelvin(mediaMes).toStringAsFixed(2)} K',));   
 
 }
   }
@@ -188,13 +192,13 @@ void imprimirRelatorioUmidadeAnual(
   
   
 
-  print('\nUmidade - $estado');
+  buffer.escrever('\nUmidade - $estado');
 
-  print(green('Média: ${mediaUmidade(leituras).toStringAsFixed(4)}',));
+  buffer.escrever(green('Média: ${mediaUmidade(leituras).toStringAsFixed(4)}',));
 
-  print(red('Máxima: ${umidadeMaxima(leituras).toStringAsFixed(4)}',));
+  buffer.escrever(red('Máxima: ${umidadeMaxima(leituras).toStringAsFixed(4)}',));
 
-  print(blue('Mínima: ${umidadeMinima(leituras).toStringAsFixed(4)}',));
+  buffer.escrever(blue('Mínima: ${umidadeMinima(leituras).toStringAsFixed(4)}',));
 
 }
 
@@ -202,7 +206,7 @@ void imprimirRelatorioUmidadeAnual(
 void imprimirRelatorioUmidadeMensal(
   List<LeituraClimatica> leituras,String estado,) {
 
-  print('\n===== Umidade - $estado =====');
+  buffer.escrever('\n===== Umidade - $estado =====');
 
   for (var mes = 1; mes <= 12; mes++) {
 
@@ -211,13 +215,13 @@ void imprimirRelatorioUmidadeMensal(
 
     if (leiturasMes.isEmpty) continue;
 
-    print('\n${meses[mes]}');
+    buffer.escrever('\n${meses[mes]}');
 
-    print(green('Média: ${mediaUmidade(leiturasMes).toStringAsFixed(4)}',));
+    buffer.escrever(green('Média: ${mediaUmidade(leiturasMes).toStringAsFixed(4)}',));
 
-    print(red('Máxima: ${umidadeMaxima(leiturasMes).toStringAsFixed(4)}',));
+    buffer.escrever(red('Máxima: ${umidadeMaxima(leiturasMes).toStringAsFixed(4)}',));
 
-    print(blue('Mínima: ${umidadeMinima(leiturasMes).toStringAsFixed(4)}',));
+    buffer.escrever(blue('Mínima: ${umidadeMinima(leiturasMes).toStringAsFixed(4)}',));
 
   }
 }
@@ -264,11 +268,11 @@ void imprimirDirecaoAnual(
   final direcao =
       direcaoMaisFrequente(leituras);
 
-  print('\nDireção do vento - $estado');
+  buffer.escrever('\nDireção do vento - $estado');
 
-  print(yellow('Graus: ${direcao.toStringAsFixed(2)}°',));
+  buffer.escrever(yellow('Graus: ${direcao.toStringAsFixed(2)}°',));
 
-  print(yellow('Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',));
+  buffer.escrever(yellow('Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',));
 }
 
 // Relatorio Mensal Direção
@@ -278,7 +282,7 @@ void imprimirDirecaoMensal(
 ) {
   final conversor = ConversorDirecao();
 
-  print('\n===== Direção - $estado =====');
+  buffer.escrever('\n===== Direção - $estado =====');
 
   for (var mes = 1; mes <= 12; mes++) {
 
@@ -290,11 +294,11 @@ void imprimirDirecaoMensal(
     final direcao =
         direcaoMaisFrequente(leiturasMes);
 
-    print('\n${meses[mes]}');
+    buffer.escrever('\n${meses[mes]}');
 
-    print(yellow('Graus: ${direcao.toStringAsFixed(2)}°',));
+    buffer.escrever(yellow('Graus: ${direcao.toStringAsFixed(2)}°',));
 
-    print(yellow('Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',));
+    buffer.escrever(yellow('Radianos: ${conversor.paraRadianos(direcao).toStringAsFixed(2)} rad',));
 
   }
 }
@@ -320,7 +324,7 @@ void imprimirTemperaturaPorHorario(
   String estado,
 ) {
 
-  print('\n===== Temperatura por Horário - $estado =====');
+  buffer.escrever('\n===== Temperatura por Horário - $estado =====');
 
   for (var hora = 1; hora <= 24; hora++) {
 
@@ -329,7 +333,7 @@ void imprimirTemperaturaPorHorario(
 
     if (leiturasHora.isEmpty) continue;
 
-    print('Hora $hora: ''${mediaTemperatura(leiturasHora).toStringAsFixed(2)} °C',);
+    buffer.escrever('Hora $hora: ''${mediaTemperatura(leiturasHora).toStringAsFixed(2)} °C',);
 
   }
 
@@ -390,24 +394,24 @@ void imprimirVelocidadeAnual(List<LeituraClimatica> leituras,String estado,) {
 
   final media = mediaVelocidadeVento(leituras);
 
-  print('\nVelocidade do vento - $estado');
+  buffer.escrever('\nVelocidade do vento - $estado');
 
-  print('Média: ${media.toStringAsFixed(2)} m/s', );
+  buffer.escrever('Média: ${media.toStringAsFixed(2)} m/s', );
 
-  print('Máxima: ${velocidadeMaxima(leituras).toStringAsFixed(2)} m/s',);
+  buffer.escrever('Máxima: ${velocidadeMaxima(leituras).toStringAsFixed(2)} m/s',);
 
-  print('Mínima: ${velocidadeMinima(leituras).toStringAsFixed(2)} m/s',);
+  buffer.escrever('Mínima: ${velocidadeMinima(leituras).toStringAsFixed(2)} m/s',);
 
-  print('Km/h: ${conversor.paraKmPorHora(media).toStringAsFixed(2)}',);
+  buffer.escrever('Km/h: ${conversor.paraKmPorHora(media).toStringAsFixed(2)}',);
 
-  print('Mph: ${conversor.paraMph(media).toStringAsFixed(2)}',);
+  buffer.escrever('Mph: ${conversor.paraMph(media).toStringAsFixed(2)}',);
 
 }
 // Exibe o relatório mensal da velocidade do vento.
 void imprimirVelocidadeMensal(List<LeituraClimatica> leituras,String estado,) {
   final conversor =ConversorVento();
 
-  print('\n===== Velocidade - $estado =====');
+  buffer.escrever('\n===== Velocidade - $estado =====');
 
   for (var mes = 1; mes <= 12; mes++) {
 
@@ -419,17 +423,17 @@ void imprimirVelocidadeMensal(List<LeituraClimatica> leituras,String estado,) {
     final mediaMes =
         mediaVelocidadeVento(leiturasMes);
 
-    print('\n${meses[mes]}');
+    buffer.escrever('\n${meses[mes]}');
 
-    print('Média: ${mediaMes.toStringAsFixed(2)} m/s',);
+    buffer.escrever('Média: ${mediaMes.toStringAsFixed(2)} m/s',);
 
-    print('Máxima: ${velocidadeMaxima(leiturasMes).toStringAsFixed(2)} m/s',);
+    buffer.escrever('Máxima: ${velocidadeMaxima(leiturasMes).toStringAsFixed(2)} m/s',);
 
-    print('Mínima: ${velocidadeMinima(leiturasMes).toStringAsFixed(2)} m/s',);
+    buffer.escrever('Mínima: ${velocidadeMinima(leiturasMes).toStringAsFixed(2)} m/s',);
 
-    print('Km/h: ${conversor.paraKmPorHora(mediaMes).toStringAsFixed(2)}',);
+    buffer.escrever('Km/h: ${conversor.paraKmPorHora(mediaMes).toStringAsFixed(2)}',);
 
-    print('Mph: ${conversor.paraMph(mediaMes).toStringAsFixed(2)}',);
+    buffer.escrever('Mph: ${conversor.paraMph(mediaMes).toStringAsFixed(2)}',);
 
   }
 }
