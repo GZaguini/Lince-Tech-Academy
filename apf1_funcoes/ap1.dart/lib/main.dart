@@ -25,39 +25,61 @@ class _MyHomePageState extends State<MyHomePage> {
   // Cor inicial do texto.
   Color corTexto = Colors.black;
 
+  // Nome inicial da cor.
+  String nomeCor = "Preto";
+
   // Objeto utilizado para gerar números aleatórios.
   final Random random = Random();
 
   // Sorteia uma nova cor para o texto.
   void sortearCor() {
 
-    // Atualiza a interface com a nova cor.
     setState(() {
 
-      corTexto = Color.fromARGB(
+      switch (random.nextInt(6)) {
 
-        // Opacidade máxima (255 = totalmente visível).
-        255,
+        case 0:
+          corTexto = Colors.red;
+          nomeCor = "Vermelho";
+          break;
 
-        // Valor aleatório do vermelho (0 a 255).
-        random.nextInt(256),
+        case 1:
+          corTexto = Colors.green;
+          nomeCor = "Verde";
+          break;
 
-        // Valor aleatório do verde (0 a 255).
-        random.nextInt(256),
+        case 2:
+          corTexto = Colors.blue;
+          nomeCor = "Azul";
+          break;
 
-        // Valor aleatório do azul (0 a 255).
-        random.nextInt(256),
-      );
+        case 3:
+          corTexto = Colors.orange;
+          nomeCor = "Laranja";
+          break;
+
+        case 4:
+          corTexto = Colors.purple;
+          nomeCor = "Roxo";
+          break;
+
+        case 5:
+          corTexto = Colors.cyan;
+          nomeCor = "Ciano";
+          break;
+
+      }
+
     });
+
   }
 
   @override
   Widget build(BuildContext context) {
 
-    // Constrói a interface da aplicação.
     return Scaffold(
 
-      // Barra superior do aplicativo.
+      // Barra superior.
       appBar: AppBar(
         title: const Text("Sorteio de Cor"),
       ),
@@ -67,14 +89,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
         child: Column(
 
-          // Centraliza os widgets verticalmente.
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
 
-            // Texto que terá sua cor alterada.
+            // Exibe o nome da cor.
             Text(
-              "Flutter",
+              nomeCor,
 
               style: TextStyle(
                 fontSize: 40,
@@ -83,20 +104,25 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-            // Espaçamento entre o texto e o botão.
             const SizedBox(height: 30),
 
-            // Botão responsável por sortear uma nova cor.
+            // Botão.
             ElevatedButton(
 
-              // Ao clicar, chama a função que gera uma nova cor.
               onPressed: sortearCor,
 
-              child: const Text("Sortear cor"),
+              child: const Text("Sortear Cor"),
+
             ),
+
           ],
+
         ),
+
       ),
+
     );
+
   }
+
 }
