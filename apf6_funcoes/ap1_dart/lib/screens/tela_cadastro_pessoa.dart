@@ -3,36 +3,37 @@ import 'package:provider/provider.dart';
 import '../models/pessoa.dart';
 import '../provider/estado_lista_pessoa.dart';
 
+// Tela responsável pelo cadastro e edição de pessoas.
 class TelaCadastroPessoa extends StatefulWidget {
+  // Recebe uma pessoa quando for edição.
+  // Caso seja nulo, será um novo cadastro.
   final Pessoa? pessoa;
 
-  const TelaCadastroPessoa({
-    super.key,
-    this.pessoa,
-  });
+  const TelaCadastroPessoa({super.key, this.pessoa});
 
   @override
   State<TelaCadastroPessoa> createState() => _TelaCadastroPessoaState();
 }
 
 class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
-  // Chave do formulário
+  // Chave utilizada para validar o formulário.
   final _formKey = GlobalKey<FormState>();
 
-  // Controllers dos campos
+  // Controllers responsáveis pelos campos de texto.
   final nomeController = TextEditingController();
   final emailController = TextEditingController();
   final telefoneController = TextEditingController();
   final githubController = TextEditingController();
 
-  // Tipo sanguíneo selecionado
+  // Armazena o tipo sanguíneo selecionado.
   TipoSanguineo? tipoSanguineo;
 
   @override
   void initState() {
     super.initState();
 
-    // Se veio uma pessoa, preenche os campos
+    // Caso uma pessoa tenha sido enviada,
+    // preenche automaticamente os campos.
     if (widget.pessoa != null) {
       nomeController.text = widget.pessoa!.nome;
       emailController.text = widget.pessoa!.email;
@@ -42,6 +43,7 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
     }
   }
 
+  // Libera os controllers da memória ao fechar a tela.
   @override
   void dispose() {
     nomeController.dispose();
@@ -56,23 +58,23 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.pessoa == null
-              ? 'Cadastrar Pessoa'
-              : 'Editar Pessoa',
+          widget.pessoa == null ? 'Cadastrar Pessoa' : 'Editar Pessoa',
         ),
       ),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
+
           child: Form(
             key: _formKey,
+
             child: Column(
               children: [
+                // Campo Nome
                 TextFormField(
                   controller: nomeController,
-                  decoration: const InputDecoration(
-                    labelText: 'Nome',
-                  ),
+                  decoration: const InputDecoration(labelText: 'Nome'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Informe o nome';
@@ -81,11 +83,10 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
                   },
                 ),
 
+                // Campo Email
                 TextFormField(
                   controller: emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                  ),
+                  decoration: const InputDecoration(labelText: 'Email'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Informe o email';
@@ -94,11 +95,10 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
                   },
                 ),
 
+                // Campo Telefone
                 TextFormField(
                   controller: telefoneController,
-                  decoration: const InputDecoration(
-                    labelText: 'Telefone',
-                  ),
+                  decoration: const InputDecoration(labelText: 'Telefone'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Informe o telefone';
@@ -107,11 +107,10 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
                   },
                 ),
 
+                // Campo GitHub
                 TextFormField(
                   controller: githubController,
-                  decoration: const InputDecoration(
-                    labelText: 'GitHub',
-                  ),
+                  decoration: const InputDecoration(labelText: 'GitHub'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Informe o GitHub';
@@ -120,6 +119,7 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
                   },
                 ),
 
+                // Seleção do tipo sanguíneo.
                 DropdownButtonFormField<TipoSanguineo>(
                   initialValue: tipoSanguineo,
                   decoration: const InputDecoration(
@@ -128,9 +128,7 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
                   items: TipoSanguineo.values.map((tipo) {
                     return DropdownMenuItem(
                       value: tipo,
-                      child: Text(
-                        nomeTipoSanguineo(tipo)
-                      ),
+                      child: Text(nomeTipoSanguineo(tipo)),
                     );
                   }).toList(),
                   onChanged: (novoTipo) {
@@ -148,9 +146,11 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
 
                 const SizedBox(height: 20),
 
+                // Botão responsável por cadastrar ou editar uma pessoa.
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
+                      // Cria um novo objeto Pessoa com os dados do formulário.
                       final novaPessoa = Pessoa(
                         nome: nomeController.text,
                         email: emailController.text,
@@ -159,25 +159,23 @@ class _TelaCadastroPessoaState extends State<TelaCadastroPessoa> {
                         tipoSanguineo: tipoSanguineo!,
                       );
 
-                      final provider =
-                          context.read<EstadoListaDePessoas>();
+                      // Obtém o Provider.
+                      final provider = context.read<EstadoListaDePessoas>();
 
+                      // Verifica se é cadastro ou edição.
                       if (widget.pessoa == null) {
                         provider.incluir(novaPessoa);
                       } else {
-                        provider.editar(
-                          widget.pessoa!,
-                          novaPessoa,
-                        );
+                        provider.editar(widget.pessoa!, novaPessoa);
                       }
 
+                      // Retorna para a tela anterior.
                       Navigator.pop(context);
                     }
                   },
+
                   child: Text(
-                    widget.pessoa == null
-                        ? 'Cadastrar'
-                        : 'Salvar Alterações',
+                    widget.pessoa == null ? 'Cadastrar' : 'Salvar Alterações',
                   ),
                 ),
               ],

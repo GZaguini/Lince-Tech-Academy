@@ -5,7 +5,9 @@ import 'screens/tela_inicial.dart';
 
 void main() {
   runApp(
-    // Disponibiliza o Provider para todo o aplicativo.
+    // Disponibiliza o Provider para toda a aplicação.
+    // Assim todas as telas podem acessar e modificar
+    // a lista de pessoas cadastradas.
     ChangeNotifierProvider(
       create: (context) => EstadoListaDePessoas(),
       child: const MyApp(),
@@ -13,17 +15,18 @@ void main() {
   );
 }
 
+// Classe principal do aplicativo.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      // Remove a faixa "DEBUG".
+      // Remove a faixa "DEBUG" do canto superior direito.
       debugShowCheckedModeBanner: false,
 
-      // Tela inicial do aplicativo.
+      // Define a primeira tela que será exibida
+      // ao iniciar o aplicativo.
       home: const TelaInicial(),
     );
   }
